@@ -65,7 +65,9 @@ El proyecto demuestra que, en entornos de Small Data, la ingeniería de caracter
 
 ## Próximos pasos:
 
-- Transfer Learning: Entrenar modelos base en datasets masivos (MovieLens) y realizar un fine-tuning con mis datos personales.
+- Transfer Learning: Explorar el entrenamiento previo en datasets de terceros con perfiles de gusto similares para transferir los pesos hacia el modelo personal, compensando así la falta de datos iniciales.
+- Análisis individualizado: Implementar un sistema de segmentación por usuario similar al aplicado en las valoraciones propias, utilizando técnicas de Target Encoding para capturar sesgos específicos de cada perfil social.
+- Refinamiento de variables: Investigar métodos avanzados de feature pruning para eliminar ruido redundante y mejorar la eficiencia computacional del modelo.
 - Transformaciones No Lineales: Explorar funciones de transferencia como:
 
   f(x)=asinh(x−b)+c
