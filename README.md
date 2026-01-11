@@ -26,7 +26,42 @@ Metric=μR2/0.5⋅(σR2⋅σMSE)⋅μMSE
 
 Esta fórmula asegura que el modelo elegido no solo sea preciso, sino robusto ante diferentes semillas de datos.
 
-# 2. Experimentos (algunos no incluidos)
+
+# 2. Requisitos, Ejecución y Artefactos
+
+## Datos necesarios (inputs)
+
+Para ejecutar el proyecto se requieren:
+
+- `biblioteca-peliculas-20250905.csv` (dataset base)
+- Datos de valoraciones de usuarios obtenidos mediante el script de scraping (carpeta `valoraciones/`)
+
+> Nota: el scraping solo es necesario si se quiere regenerar las valoraciones. El repositorio incluye una snapshot de las valoraciones para reproducibilidad.
+
+## Artefactos generados (outputs)
+
+Al ejecutar el pipeline, se generan automáticamente archivos intermedios y resultados:
+
+### Bibliotecas derivadas
+- Biblioteca numérica
+- Biblioteca con detalle
+- Biblioteca limpia
+- Biblioteca depurada
+
+### Resultados de modelos
+- Modelo lineal
+- Random Forest
+- AutoGluon
+
+### Modelo final
+- Modelo final entrenado
+
+### Otros
+- Archivos de soporte / intermedios no relevantes para el uso final del proyecto
+
+Estos artefactos se generan durante la ejecución y no es necesario versionarlos manualmente.
+
+# 3. Experimentos (algunos no incluidos)
 
 Antes de llegar a la solución final, se exploraron múltiples vías de investigación. Aunque muchas fueron descartadas por introducir ruido o complejidad innecesaria, cada una aportó valor al entendimiento del dataset.
 
@@ -59,7 +94,7 @@ Resultado: Aunque el enfoque es potente, la escasez de datos de entrenamiento pa
 - RFE con PFI: Se utilizó Eliminación Recursiva de Características combinada con Importancia por Permutación (Permutation Feature Importance). Esto permitió identificar qué variables realmente aportaban valor y cuáles eran puramente aleatorias.
 - Interacciones Polinómicas: Se generaron combinaciones de segundo grado entre variables numéricas (ej: imdbRating * Metascore) para capturar efectos sinérgicos, filtrándolas posteriormente para evitar el overfitting.
 
-# 3. Conclusiones y Futuro
+# 4. Conclusiones y Futuro
 
 El proyecto demuestra que, en entornos de Small Data, la ingeniería de características y la calidad de los datos (el "Data-Centric AI") superan en importancia a la complejidad del algoritmo. El modelo final es una herramienta funcional que sirve de guía para futuras visualizaciones.
 
