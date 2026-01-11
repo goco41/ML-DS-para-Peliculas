@@ -111,4 +111,4 @@ El proyecto demuestra que, en entornos de Small Data, la ingeniería de caracter
 
   w(x)=r⋅tanh(ix−t)+u 
 
-para ajustar la distribución de las predicciones y mejorar la sensibilidad en los extremos de la escala de notas.
+para ajustar la distribución de las predicciones y mejorar la sensibilidad en los extremos de la escala de notas. U optar por cambios en las features como elevarlas al cuadrado para darle mas importancia a notas mas altas ya que la diferencia entre un 1 y un 2 es nula pero entre un 9 y un 10 es masiva.
