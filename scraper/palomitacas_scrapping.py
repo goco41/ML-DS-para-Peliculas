@@ -167,7 +167,7 @@ def scrape_palomitacas_profile_movies(profile_movies_url: str,
 # BLOQUE DE EJECUCIÓN CON CSV
 
 # Rutas de configuración
-INPUT_CSV = os.path.join("data", "links.csv")
+INPUT_CSV = os.path.join("scraper", "links.csv")
 OUTPUT_FOLDER = os.path.join("data", "valoraciones")
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
@@ -233,3 +233,4 @@ if total_links > 0:
 else:
     print("No se procesaron enlaces.")
 # %%
+
