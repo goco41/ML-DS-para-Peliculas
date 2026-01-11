@@ -105,10 +105,12 @@ El proyecto demuestra que, en entornos de Small Data, la ingeniería de caracter
 - Refinamiento de variables: Investigar métodos avanzados de feature pruning para eliminar ruido redundante y mejorar la eficiencia computacional del modelo.
 - Transformaciones No Lineales: Explorar funciones de transferencia como:
 
-  f(x)=asinh(x−b)+c
+  f(x)=a⋅sinh(x−b)+c
 
   q(x)=kx+l
 
-  w(x)=r⋅tanh(ix−t)+u 
+  w(x)=r⋅tanh(ix−t)+u
 
-para ajustar la distribución de las predicciones y mejorar la sensibilidad en los extremos de la escala de notas. U optar por cambios en las features como elevarlas al cuadrado para darle mas importancia a notas mas altas ya que la diferencia entre un 1 y un 2 es nula pero entre un 9 y un 10 es masiva.
+  s(x)=x^2
+
+para ajustar la distribución de las predicciones y mejorar la sensibilidad en los extremos de la escala de notas. En particular, la transformación cuadrática busca corregir el sesgo de escala lineal, modelando la realidad perceptual donde la distancia crítica entre una nota de 9 y 10 es significativamente mayor (y más relevante para la recomendación) que la diferencia existente entre un 1 y un 2.
