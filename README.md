@@ -1,4 +1,4 @@
-# 1. Resumen Ejecutivo del Proyecto
+# 1. Resumen del Proyecto
 
 La mayoría de los sistemas de recomendación modernos (Netflix, Amazon) se basan en Big Data y filtrado colaborativo. Este proyecto aborda el escenario opuesto: Small Data. Con un dataset de apenas unos cientos de registros, el desafío principal es extraer señal predictiva sin caer en el sobreajuste (overfitting).
 
