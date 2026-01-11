@@ -55,9 +55,7 @@ warnings.filterwarnings('ignore')
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - [utils] - %(message)s', datefmt='%H:%M:%S')
 
 
-# =============================================================================
 # Custom Transformers
-# =============================================================================
 
 class PositionalMultiLabelEncoder(BaseEstimator, TransformerMixin):
     """
@@ -129,9 +127,7 @@ class PositionalMultiLabelEncoder(BaseEstimator, TransformerMixin):
         return X_out.drop(columns=[self.col_name])
 
 
-# =============================================================================
 # Data Ingestion & Cleaning
-# =============================================================================
 
 def limpiar_dataset_inicial(ruta_entrada: str, ruta_salida: str) -> Optional[pd.DataFrame]:
     try:
@@ -192,9 +188,7 @@ def limpieza_post_api(df: pd.DataFrame) -> pd.DataFrame:
     return df_limpio
 
 
-# =============================================================================
 # Feature Engineering
-# =============================================================================
 
 def limpiar_features_numericas(df: pd.DataFrame) -> pd.DataFrame:
     # Vectorized string processing
@@ -278,9 +272,7 @@ def guardar_dataset_completo(df_base: pd.DataFrame, df_embeddings: pd.DataFrame,
     return df_full
 
 
-# =============================================================================
 # Evaluation & Modeling Utils
-# =============================================================================
 
 def calcular_metrica_cine(mu_r2, mu_mse, std_r2, std_mse, epsilon=1e-8):
     """
@@ -449,9 +441,7 @@ def comparativa_final_encoding(X_base, y, cols_cat, seeds=[0, 1, 2, 3, 4]):
     return pd.DataFrame(res)
 
 
-# =============================================================================
 # Visualization & Embeddings
-# =============================================================================
 
 def visualizar_plot_2d(X_plot: pd.DataFrame, y: pd.Series):
     def _get_color_category(nota):
@@ -568,9 +558,7 @@ def evaluar_pca_knn_robusto(X, y, seeds=[0]):
     return pd.DataFrame(resultados)
 
 
-# =============================================================================
 # User Data Integration
-# =============================================================================
 
 def cargar_datos_usuarios_recursivo(ruta_raiz: str, df_base: pd.DataFrame) -> Tuple[pd.DataFrame, List[str]]:
     if 'id' not in df_base.columns:
@@ -660,9 +648,7 @@ def cargar_referencia_usuarios(ruta_raiz: str) -> Tuple[pd.DataFrame, List[str]]
     return df_master, cols_users
 
 
-# =============================================================================
 # Optimization (Optuna & AutoGluon)
-# =============================================================================
 
 def optimizar_arquitectura_unica(X_dict, y, n_trials=50, n_seeds_inner=2, ruta_guardado='resultados_optuna_unicos.csv'):
     study_results = []
@@ -944,9 +930,7 @@ def optimizar_arquitectura_autogluon(X_dict, y, n_trials=20, n_seeds=10, time_li
     return df_res
 
 
-# =============================================================================
 # Final Training & SHAP
-# =============================================================================
 
 def entrenar_rf_final_optimizado(X_final, y, cat_cols, n_trials=50):
     print(f"\n[INFO] Hyperparameter tuning ({n_trials} trials)...")
@@ -1057,9 +1041,7 @@ def entrenar_rf_final_optimizado(X_final, y, cat_cols, n_trials=50):
     return maestro_pipe
 
 
-# =============================================================================
-# Deployment / Inference
-# =============================================================================
+# Deployment
 
 class CinePredictor:
     def __init__(self,
