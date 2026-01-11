@@ -1,4 +1,3 @@
-#%%
 import re
 import json
 import requests
@@ -232,5 +231,5 @@ if total_links > 0:
     print(f"Porcentaje de éxito: {success_percentage:.2f}%")
 else:
     print("No se procesaron enlaces.")
-# %%
+
 
