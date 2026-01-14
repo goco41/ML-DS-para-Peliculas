@@ -94,6 +94,13 @@ Resultado: Aunque el enfoque es potente, la escasez de datos de entrenamiento pa
 - RFE con PFI: Se utilizó Eliminación Recursiva de Características combinada con Importancia por Permutación (Permutation Feature Importance). Esto permitió identificar qué variables realmente aportaban valor y cuáles eran puramente aleatorias.
 - Interacciones Polinómicas: Se generaron combinaciones de segundo grado entre variables numéricas (ej: imdbRating * Metascore) para capturar efectos sinérgicos, filtrándolas posteriormente para evitar el overfitting.
 
+## Arquitecturas basadas en Grafos (GNN)
+
+Se exploraron modelos de aprendizaje profundo geométrico para capturar la estructura relacional del dataset:
+- Redes Neuronales de Grafos (LightGCN y GAT): Se modeló el dataset como un grafo bipartito donde los nodos eran usuarios y películas.
+- Mecanismos de Agregación y Atención: Se intentó que los embeddings aprendieran la topología del gusto social mediante la propagación de información entre nodos vecinos.
+- Inyección de Contenido: Se integraron las características técnicas de las películas directamente en los nodos del grafo para mitigar el problema del Cold Start.
+
 # 4. Conclusiones y Futuro
 
 El proyecto demuestra que, en entornos de Small Data, la ingeniería de características y la calidad de los datos (el "Data-Centric AI") superan en importancia a la complejidad del algoritmo. El modelo final es una herramienta funcional que sirve de guía para futuras visualizaciones.
